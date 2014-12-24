@@ -33,7 +33,9 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* BlobBuilder is an new interface to build a Blob which
  * is required to FormData for sending "files" in a request
  */
-BlobBuilder = window.MozBlobBuilder || window.WebKitBlobBuilder || window.BlobBuilder
+// Although it may still work in some browsers, its use is discouraged since it could be removed at any time. Try to avoid using it.
+// See https://developer.mozilla.org/en-US/docs/Web/API/BlobBuilder
+BlobBuilder = Blob; 
 
 //prepare to receive message 
 window.addEventListener("message", function(event) {
